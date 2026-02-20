@@ -665,6 +665,134 @@ footer {
 .intro-enter:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 8px 0 #0d5c10,0 14px 40px rgba(46,204,64,.6);}
 .intro-enter:active{transform:translateY(2px);box-shadow:0 3px 0 #0d5c10;}
 
+
+/* ═══════════════════════════════
+   RESPONSIVE — TABLET & MOBILE
+═══════════════════════════════ */
+
+/* ── TABLET (max 900px) ── */
+@media (max-width: 900px) {
+  /* Nav — hide text labels, keep icons readable */
+  .nav-links a {
+    font-size: 6px;
+    padding: 5px 7px;
+    letter-spacing: 0;
+  }
+  .nav-logo { font-size: 15px; }
+
+  /* Hero — stack vertically */
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px 24px;
+    text-align: center;
+  }
+  .hero-char { order: -1; }
+  .hero-char svg { width: 200px; height: 230px; }
+  .char-ring       { width: 200px; height: 200px; }
+  .char-ring:nth-child(2) { width: 240px; height: 240px; }
+  .char-ring:nth-child(3) { width: 280px; height: 280px; }
+  .game-pills { justify-content: center; }
+  .hero-ctas  { justify-content: center; }
+
+  /* Sections */
+  section { padding: 60px 24px; }
+  #game-section { padding: 60px 24px; }
+
+  /* Leaderboard — drop the game column */
+  .lb-row { grid-template-columns: 40px 1fr 100px; }
+  .lb-game { display: none; }
+  .lb-tabs { gap: 4px; }
+  .lb-tab  { font-size: 6px; padding: 5px 8px; }
+  .lb-header { flex-direction: column; gap: 10px; }
+
+  /* Game canvas shorter */
+  #gameCanvas { height: 260px; }
+
+  /* Intro modal */
+  .intro-inner { gap: 14px; }
+  .ib-hero { width: 20%; }
+  .intro-enter { font-size: 9px; padding: 14px 28px; }
+}
+
+/* ── MOBILE (max 600px) ── */
+@media (max-width: 600px) {
+  /* Nav — collapse to just logo + coins */
+  nav { padding: 0 14px; }
+  .nav-links { display: none; }
+  .nav-logo  { font-size: 13px; }
+  .nav-coins { font-size: 7px; }
+
+  /* Hero */
+  .hero-text h1    { font-size: clamp(28px,8vw,42px); }
+  .hero-tagline    { font-size: 7px; }
+  .hero-content    { padding: 16px; }
+  .hero-char svg   { width: 160px; height: 185px; }
+  .btn-primary,
+  .btn-secondary   { font-size: 7px; padding: 12px 16px; }
+  .game-pill       { font-size: 6px; padding: 6px 10px; }
+
+  /* Sections */
+  section { padding: 48px 16px; }
+  #game-section { padding: 48px 16px; }
+  .section-title { font-size: clamp(12px,4vw,18px); }
+
+  /* Video grid — single column */
+  .video-grid  { grid-template-columns: 1fr; }
+  .shots-grid  { grid-template-columns: repeat(2, 1fr); }
+
+  /* Leaderboard */
+  .lb-row { grid-template-columns: 36px 1fr 80px; padding: 10px 14px; }
+  .lb-header { padding: 14px 16px; }
+  .lb-score  { font-size: 8px; }
+  .lb-name   { font-size: 13px; }
+  .lb-header-title { font-size: 8px; }
+  .lb-tabs   { flex-wrap: wrap; }
+  .lb-tab    { font-size: 5px; padding: 4px 7px; }
+  .add-score-btn { margin: 12px 16px; font-size: 6px; }
+
+  /* Game */
+  #gameCanvas { height: 220px; }
+  .game-header { flex-direction: column; gap: 10px; align-items: flex-start; }
+  .game-stats  { gap: 14px; }
+  .game-ctrl-hint { font-size: 6px; }
+  .game-title-bar { font-size: 8px; }
+  .game-stat  { font-size: 7px; }
+  .game-controls { flex-direction: column; align-items: flex-start; }
+
+  /* Modals */
+  .modal-box { padding: 20px 16px; }
+  .modal-title { font-size: 9px; }
+
+  /* Footer */
+  footer { padding: 24px 16px; }
+
+  /* Intro modal */
+  .intro-inner    { gap: 12px; padding: 0 8px; }
+  .ib-hero        { width: 18%; bottom: 10%; }
+  .ib-shield      { width: 44px; }
+  .ib-floaty      { font-size: clamp(10px,3.5vw,20px); }
+  .ib-titles      { width: 58%; }
+  .ib-main        { font-size: clamp(18px,5vw,38px); }
+  .ib-tag         { font-size: clamp(4px,.9vw,7px); }
+  .ib-pills       { gap: 5px; }
+  .ib-pill        { font-size: clamp(3px,.7vw,6px); padding: 2px 7px; }
+  .ib-sub         { font-size: clamp(4px,.8vw,7px); padding: 4px 9px; }
+  .intro-enter    { font-size: 8px; padding: 12px 22px; }
+
+  /* Toast */
+  .toast { font-size: 7px; padding: 10px 14px; right: 12px; bottom: 12px; }
+}
+
+/* ── SMALL MOBILE (max 400px) ── */
+@media (max-width: 400px) {
+  .hero-char svg { width: 130px; height: 150px; }
+  .shots-grid    { grid-template-columns: 1fr; }
+  .game-stats    { gap: 10px; flex-wrap: wrap; }
+  .ib-main       { font-size: clamp(16px,6vw,28px); }
+  .lb-row        { grid-template-columns: 30px 1fr 70px; }
+}
+
 </style>
 </head>
 <body>
@@ -847,7 +975,16 @@ footer {
     <a href="#game-section">🎮 MINI GAME</a>
   </div>
   <div class="nav-coins">🪙 <span id="coinCount">0</span> COINS</div>
+  <!-- Mobile menu toggle -->
+  <button id="mobileMenuBtn" onclick="toggleMobileMenu()" style="display:none;background:none;border:2px solid var(--green);border-radius:6px;padding:5px 9px;cursor:pointer;font-size:14px;color:var(--green);">☰</button>
 </nav>
+<!-- Mobile nav dropdown -->
+<div id="mobileNav" style="display:none;position:fixed;top:56px;left:0;right:0;z-index:999;background:rgba(6,8,16,0.97);border-bottom:2px solid var(--green);padding:12px 16px;flex-direction:column;gap:8px;">
+  <a href="#videos"       onclick="closeMobileMenu()" style="font-family:var(--pixel);font-size:8px;color:rgba(255,255,255,.7);text-decoration:none;padding:8px 0;border-bottom:1px solid var(--border);">▶ VIDEOS</a>
+  <a href="#screenshots"  onclick="closeMobileMenu()" style="font-family:var(--pixel);font-size:8px;color:rgba(255,255,255,.7);text-decoration:none;padding:8px 0;border-bottom:1px solid var(--border);">📸 SCREENSHOTS</a>
+  <a href="#leaderboard"  onclick="closeMobileMenu()" style="font-family:var(--pixel);font-size:8px;color:rgba(255,255,255,.7);text-decoration:none;padding:8px 0;border-bottom:1px solid var(--border);">🏆 LEADERBOARD</a>
+  <a href="#game-section" onclick="closeMobileMenu()" style="font-family:var(--pixel);font-size:8px;color:rgba(255,255,255,.7);text-decoration:none;padding:8px 0;">🎮 MINI GAME</a>
+</div>
 
 <!-- ── HERO ── -->
 <div id="hero">
@@ -1490,6 +1627,32 @@ const revObs=new IntersectionObserver(entries=>{
   entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
 },{threshold:.1});
 revEls.forEach(el=>revObs.observe(el));
+
+// ══════════════════════════════
+//  MOBILE NAV
+// ══════════════════════════════
+function checkMobileNav(){
+  const btn = document.getElementById('mobileMenuBtn');
+  const links = document.querySelector('.nav-links');
+  if(window.innerWidth <= 600){
+    btn.style.display = 'block';
+    links.style.display = 'none';
+  } else {
+    btn.style.display = 'none';
+    links.style.display = 'flex';
+    document.getElementById('mobileNav').style.display = 'none';
+  }
+}
+function toggleMobileMenu(){
+  const nav = document.getElementById('mobileNav');
+  nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+}
+function closeMobileMenu(){
+  document.getElementById('mobileNav').style.display = 'none';
+}
+checkMobileNav();
+window.addEventListener('resize', checkMobileNav);
+
 </script>
 </body>
 </html>
